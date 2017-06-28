@@ -1,16 +1,20 @@
-FreeCodeCamp: Timestamp Microservice
+FreeCodeCamp: URL Shortener Microservice
 =========================
 
-- I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).
-- If it does, it returns both the Unix timestamp and the natural language form of that date.
-- If it does not contain a date or Unix timestamp, it returns null for those properties.
+- I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+- If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+- When I visit that shortened URL, it will redirect me to my original link.
 
-Usage: 
-<br />https://roldeguz-ts-microservice.glitch.me/June%2022,%202017
-<br />https://roldeguz-ts-microservice.glitch.me/1498089600
+Create: 
+<br />https://roldeguz-url-shortener.glitch.me/new/http://www.google.com 
+<br />https://roldeguz-url-shortener.glitch.me/new/http://www.reddit.com
 <br /><br />
 Output: 
-<br />{ "unix": 1498089600, "natural": "June 22, 2017" }
-<br />
-<br />
-22-June-2017, roldeguz
+<br />{ "original_url":"http://www.google.com", "short_url":"https://roldeguz-url-shortener.glitch.me/57112" } 
+<br />{ "original_url":"http://www.reddit.com", "short_url":"https://roldeguz-url-shortener.glitch.me/87565" }
+<br /><br />
+Usage: 
+<br />https://roldeguz-url-shortener.glitch.me/57112 will redirect to http://www.google.com 
+<br />https://roldeguz-url-shortener.glitch.me/87565 will redirect to http://www.reddit.com
+<br /><br />
+27-June-2017, roldeguz
